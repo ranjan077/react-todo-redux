@@ -14,14 +14,6 @@ const store = createStore(allReducers);
 
 class TodoApp extends React.Component {
 	
-	componentWillMount() {
-		TodoStore.on('change', this.getAllTodos.bind(this))
-	}
-	
-	componentWillUnmount () {
-		TodoStore.removeListener('change', this.getAllTodos);
-	}
-	
 	editTodo(oldTodo) {
 		actions.editTodo(oldTodo);
 	}
